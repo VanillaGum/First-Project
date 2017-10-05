@@ -14,16 +14,12 @@
     <object>objects\obj_player</object>
   </objects>
 <<<<<<< HEAD
-<<<<<<< HEAD
   <rooms name="rooms"/>
 =======
   <rooms name="rooms">
     <room>rooms\room_test</room>
   </rooms>
 >>>>>>> b0827a30764b49d430a618c07c6bf85d6f75c68f
-=======
-  <rooms name="rooms"/>
->>>>>>> parent of f0a7e1c... Merge branch 'master' of https://github.com/VanillaGum/First-Project
   <help>
     <rtf>help.rtf</rtf>
   </help>
