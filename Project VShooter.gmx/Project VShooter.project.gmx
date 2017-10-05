@@ -13,6 +13,7 @@
   <objects name="objects">
     <object>objects\obj_player</object>
   </objects>
+  <rooms name="rooms"/>
   <help>
     <rtf>help.rtf</rtf>
   </help>
