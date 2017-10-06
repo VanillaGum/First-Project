@@ -16,10 +16,12 @@
   <objects name="objects">
     <object>objects\obj_bullet</object>
     <object>objects\obj_player</object>
+    <object>objects\gotoroom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\InfinityRoom</room>
+    <room>rooms\VanillaRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
