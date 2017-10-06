@@ -7,8 +7,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_test</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_bullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -16,10 +14,9 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_bullet</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test_room</room>
+    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
