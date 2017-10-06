@@ -18,6 +18,7 @@
     <object>objects\obj_player</object>
     <object>objects\gotoroom</object>
     <object>objects\obj_vanilla_test_obj</object>
+    <object>objects\obj_enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
