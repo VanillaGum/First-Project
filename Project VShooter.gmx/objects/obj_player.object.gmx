@@ -50,13 +50,11 @@ y += 2
           <argument>
             <kind>1</kind>
             <string>///Bob Ross
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="83">
     <event eventtype="6" enumb="54">
       <action>
         <libid>1</libid>
@@ -74,8 +72,6 @@ y += 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Down S
-vspeed = 3
             <string>x = mouse_x;
 y = mouse_y;
 </string>
@@ -83,7 +79,6 @@ y = mouse_y;
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="68">
     <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
@@ -101,32 +96,6 @@ y = mouse_y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Right Movement D
-hspeed = 3
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="65">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Left Movement A
-hspeed = -3
             <string>instance_create(x,y,obj_bullet);
 </string>
           </argument>
