@@ -32,7 +32,7 @@ y += 2
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="37">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,8 +49,7 @@ y += 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x +=2
-
+            <string>///Bob Ross
 </string>
           </argument>
         </arguments>
