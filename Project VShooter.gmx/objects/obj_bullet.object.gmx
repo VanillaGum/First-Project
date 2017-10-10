@@ -52,13 +52,11 @@ dir = 0;
             <kind>1</kind>
             <string>lngdirx = lengthdir_x(spd,dir);
 lngdiry = lengthdir_y(spd,dir);
-g = 0;
 enemycollide = 0;
-for (i = lengthdir_y(spd,dir);i &gt;0; i-- ) {
-    g++;
-    if (place_meeting(lengthdir_x(spd,dir) - g, lengthdir_x(spd,dir) - g,obj_enemy) ) {
-       x+=  lengthdir_x(spd,dir) - g;
-       y+= lengthdir_x(spd,dir) - g;
+for (i = spd;i &gt;0; i-- ) {
+    if (place_meeting(x+lengthdir_x(i,dir), y+lengthdir_y(i,dir),obj_enemy) ) {
+       x+=  lengthdir_x(i,dir);
+       y+= lengthdir_y(i,dir);
        enemycollide = 1;
     }   
 }
