@@ -60,7 +60,7 @@ x = max(x,0);
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="87">
+    <event eventtype="5" enumb="40">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -77,14 +77,13 @@ x = max(x,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Front/Top
-vspeed -= 3;
+            <string>vspeed += 8
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="83">
+    <event eventtype="5" enumb="39">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -101,14 +100,13 @@ vspeed -= 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Bottom/Down
-vspeed += 3;
+            <string>hspeed += 8
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="68">
+    <event eventtype="5" enumb="38">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -125,14 +123,13 @@ vspeed += 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Right
-hspeed += 3;
+            <string>vspeed -= 8
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="65">
+    <event eventtype="5" enumb="37">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -149,8 +146,7 @@ hspeed += 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Left
-hspeed -= 3;
+            <string>hspeed -= 8
 </string>
           </argument>
         </arguments>
