@@ -24,6 +24,7 @@
     <room>rooms\room0</room>
     <room>rooms\InfinityRoom</room>
     <room>rooms\VanillaRoom</room>
+    <room>rooms\room3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
