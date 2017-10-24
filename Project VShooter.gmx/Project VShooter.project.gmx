@@ -9,6 +9,7 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_vanilla_test</sprite>
+    <sprite>sprites\Indicator</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -19,6 +20,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_bullet</object>
+    <object>objects\obj_bullet_test</object>
     <object>objects\obj_bullet_split</object>
     <object>objects\obj_bullet_parent</object>
     <object>objects\obj_bullet_tracking</object>
@@ -26,6 +28,7 @@
     <object>objects\gotoroom</object>
     <object>objects\obj_vanilla_test_obj</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_vanilla_indicator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

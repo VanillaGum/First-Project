@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = 10;
+            <string>spd = 1;
 dir = 0;
 
 </string>
@@ -50,17 +50,17 @@ dir = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lngdirx = x+lengthdir_x(spd,dir);
-lngdiry = y+lengthdir_y(spd,dir);
-enemycollide = 0;
-if (collision_line(x,y,lngdirx,lngdiry,obj_enemy,false,false) != noone) {
+            <string>lngdirx = lengthdir_x(spd,dir);
+lngdiry = lengthdir_y(spd,dir);
+if (collision_line(x,y,lengthdir_x(spd,dir),lengthdir_y(spd,dir),obj_enemy,false,false) != noone) {
     enemycollide = 1;
-    enemy = collision_line_first(x,y,lngdirx,lngdiry,obj_enemy,false,false);
-    x = enemy.x;
-    y = enemy.y;
+    enemy = collision_line_first(x,y,lengthdir_x(spd,dir),lengthdir_y(spd,dir),obj_enemy,false,false);
+    with (enemy) {
+        image_blend = make_colour_rgb(255,0,0);
+    }
 }else {
-    x = lngdirx;
-    y = lngdiry;
+    x += lengthdir_x(spd,dir);
+    y += lengthdir_y(spd,dir);
 }
 </string>
           </argument>
@@ -70,28 +70,17 @@ if (collision_line(x,y,lngdirx,lngdiry,obj_enemy,false,false) != noone) {
     <event eventtype="4" ename="obj_enemy">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>203</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>for (i=0; i &lt;= 360; i+=45) {
-    bullet = instance_create(x,y,obj_bullet);
-    bullet.dir = i;
-    instance_destroy(self);
-}
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
     <event eventtype="7" enumb="0">

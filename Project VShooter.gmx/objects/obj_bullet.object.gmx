@@ -50,17 +50,17 @@ dir = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lngdirx = lengthdir_x(spd,dir);
-lngdiry = lengthdir_y(spd,dir);
+            <string>lngdirx = x+lengthdir_x(spd,dir);
+lngdiry = y+lengthdir_y(spd,dir);
 enemycollide = 0;
-if (collision_line(x,y,lengthdir_x(spd,dir),lengthdir_y(spd,dir),obj_enemy,false,false) != noone) {
+if (collision_line(x,y,lngdirx,lngdiry,obj_enemy,false,false) != noone) {
     enemycollide = 1;
-    enemy = collision_line_first(x,y,lengthdir_x(spd,dir),lengthdir_y(spd,dir),obj_enemy,false,false);
+    enemy = collision_line_first(x,y,lngdirx,lngdiry,obj_enemy,false,false);
     x = enemy.x;
     y = enemy.y;
 }else {
-    x += lengthdir_x(spd,dir);
-    y += lengthdir_y(spd,dir);
+    x = lngdirx;
+    y = lngdiry;
 }
 </string>
           </argument>

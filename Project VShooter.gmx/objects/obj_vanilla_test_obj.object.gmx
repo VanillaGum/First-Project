@@ -72,39 +72,15 @@
           <argument>
             <kind>1</kind>
             <string>dir = point_direction(x,y,mouse_x,mouse_y);
-if (dir &gt; 20 &amp;&amp; dir &lt; 160 &amp;&amp; canfire == true) {
+if (dir &gt; 20 &amp;&amp; dir &lt; 160) {
     //bullet = instance_create(x,y,obj_bullet);
     //bullet.dir = dir;
     //bullet2 = instance_create(x,y,obj_bullet_tracking);
-    bullet = instance_create(x,y,obj_bullet_split);
+    bullet = instance_create(x,y,obj_bullet);
     bullet.dir = dir;
     canfire = false;
     alarm[0] = 240;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>dir = point_direction(x,y,mouse_x,mouse_y);
-show_message(string(dir));
 </string>
           </argument>
         </arguments>

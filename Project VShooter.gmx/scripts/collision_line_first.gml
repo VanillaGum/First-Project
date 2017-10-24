@@ -20,7 +20,9 @@
     object = argument4;
     prec = argument5;
     notme = argument6;
+    //Check if x new pos is backwards?
     sx = dx - ox;
+    //Check if y new pos is backwards?
     sy = dy - oy;
     inst = collision_line(ox,oy,dx,dy,object,prec,notme);
     if (inst != noone) {
@@ -28,7 +30,7 @@
             sx /= 2;
             sy /= 2;
             i = collision_line(ox,oy,dx,dy,object,prec,notme);
-            if (i) {
+            if (i != noone) {
                 dx -= sx;
                 dy -= sy;
                 inst = i;
