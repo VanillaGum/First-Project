@@ -72,14 +72,14 @@
           <argument>
             <kind>1</kind>
             <string>dir = point_direction(x,y,mouse_x,mouse_y);
-if (dir &gt; 20 &amp;&amp; dir &lt; 160) {
+if (dir &gt; 20 &amp;&amp; dir &lt; 160 &amp;&amp; canfire == true) {
     //bullet = instance_create(x,y,obj_bullet);
     //bullet.dir = dir;
     //bullet2 = instance_create(x,y,obj_bullet_tracking);
-    bullet = instance_create(x,y,obj_bullet);
+    bullet = instance_create(x,y,obj_bullet_tracking);
     bullet.dir = dir;
     canfire = false;
-    alarm[0] = 240;
+    alarm[0] = 60;
 }
 </string>
           </argument>
