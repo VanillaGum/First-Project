@@ -17,6 +17,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\collision_line_first.gml</script>
+    <script>scripts\instance_nearest_unused.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_bullet</object>
@@ -31,6 +32,7 @@
     <object>objects\obj_vanilla_indicator</object>
     <object>objects\obj_control_generator</object>
     <object>objects\obj_ai_shield_test</object>
+    <object>objects\obj_ai_shield_test_2</object>
     <object>objects\obj_ai_police_test</object>
   </objects>
   <rooms name="rooms">

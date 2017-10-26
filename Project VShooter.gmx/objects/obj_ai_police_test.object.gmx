@@ -59,14 +59,27 @@ shield = noone;
             <kind>1</kind>
             <string>if (instance_exists(obj_ai_shield_test)) {
     if (shield == noone) {
-        shield = instance_nearest(x,y,obj_ai_shield_test);
-        shield.police = id;
+        //Get Shield
+        var list = ds_priority_create();
+        with (obj_ai_shield_test)
+            {
+            if (occupied == noone)
+                {
+                ds_priority_add(list, id, distance_to_point(other.x, other.y));
+                }
+            }   
+        if (ds_priority_empty(list) == false) {
+                shield = ds_priority_find_min(list);
+                shield.occupied = true;
+        }
+        ds_priority_destroy(list);
     }
     if (shield != noone) {
+        //Start Moving To Shield Below
         if (point_distance(x,y, shield.x,shield.y+50)) &gt; 15 {
             move_towards_point(shield.x,shield.y+50,15);
         }else {
-            if (x != shield.x &amp;&amp; y != shield.y) {
+            if (x != shield.x &amp; y != shield.y) {
                 move_towards_point(shield.x,shield.y+50,1);
             }else {
                 speed = 0;
