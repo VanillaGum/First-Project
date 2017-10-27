@@ -79,8 +79,11 @@ shield = noone;
         if (point_distance(x,y, shield.x,shield.y+50)) &gt; 15 {
             move_towards_point(shield.x,shield.y+50,15);
         }else {
+            //ToDo
+            //Add movement based on shield speed
+            
             if (x != shield.x &amp; y != shield.y) {
-                move_towards_point(shield.x,shield.y+50,1);
+                move_towards_point(shield.x,shield.y+50,3);
             }else {
                 speed = 0;
             }
