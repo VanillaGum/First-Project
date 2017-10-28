@@ -17,7 +17,6 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\collision_line_first.gml</script>
-    <script>scripts\instance_nearest_unused.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_bullet</object>
