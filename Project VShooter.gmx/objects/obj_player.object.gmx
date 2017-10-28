@@ -195,6 +195,7 @@ x = max(x,0);
           <argument>
             <kind>1</kind>
             <string>image_angle = point_direction(x,y,mouse_x,mouse_y)
+draw_self();
 </string>
           </argument>
         </arguments>
