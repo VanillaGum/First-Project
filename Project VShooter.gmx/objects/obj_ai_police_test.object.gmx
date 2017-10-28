@@ -75,19 +75,23 @@ shield = noone;
         ds_priority_destroy(list);
     }
     if (shield != noone) {
+        if (x != shield.x &amp; y != shield.y) {
         //Start Moving To Shield Below
-        if (point_distance(x,y, shield.x,shield.y+50)) &gt; 15 {
-            move_towards_point(shield.x,shield.y+50,15);
-        }else {
-            //ToDo
-            //Add movement based on shield speed
-            
-            if (x != shield.x &amp; y != shield.y) {
+            if (point_distance(x,y, shield.x,shield.y+50)) &gt; 15 {
+                move_towards_point(shield.x,shield.y+50,15);
+            }else
+            if (point_distance(x,y, shield.x,shield.y+50)) &gt; 3 {
                 move_towards_point(shield.x,shield.y+50,3);
-            }else {
+            }else 
+            if (point_distance(x,y, shield.x,shield.y+50)) &gt;= 1 {
+                move_towards_point(shield.x,shield.y+50,1);
+            }else { 
                 speed = 0;
             }
         }
+    }else{
+        //Do Normal None Shield Ai Here
+        
     }
 }
 </string>
