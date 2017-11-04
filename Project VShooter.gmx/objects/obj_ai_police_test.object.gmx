@@ -35,7 +35,8 @@ facedir = 0;
 //When they go over a border
 shield = noone;
 alarm[0] = irandom_range(60,90);
-state = "nothing";
+state = "retreat";
+amttomove = 0;
 </string>
           </argument>
         </arguments>
@@ -118,7 +119,7 @@ alarm[0] = irandom_range(60,90);
         }
     }else{
         //Do Normal None Shield Ai Here
-        if (y &lt; obj_vanilla_test_obj.y - 100) {
+        if (y &gt; obj_vanilla_test_obj.y - 100) {
             if (state == "nothing") {
                 //Calculate a state or  just u know randomly select one?
                 state = choose("retreat","aggro");
@@ -126,8 +127,14 @@ alarm[0] = irandom_range(60,90);
             switch(state) {
             //Too Close To Player, Retreat (Check For Player Hp Next Time Also)
             case "retreat":
+                if(amttomove &lt;= 0) {
+                    irandom_range(15,30);
+                }
                 y += 3;
-                
+                amttomove -= 3;
+                if (amttomove &lt;= 0) {
+                   state = choose("retreat","aggro");
+                }
             break; 
             //Too Far To Player, Aggro
             case "aggro":
