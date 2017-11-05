@@ -37,6 +37,7 @@ shield = noone;
 alarm[0] = irandom_range(60,90);
 state = "retreat";
 amttomove = 0;
+xrandom = 0;
 </string>
           </argument>
         </arguments>
@@ -60,7 +61,7 @@ amttomove = 0;
           <argument>
             <kind>1</kind>
             <string>bullet = instance_create(x,y,obj_enemy_bullet);
-dir = point_direction(x,y,obj_vanilla_test_obj.x,obj_vanilla_test_obj.y);
+dir = point_direction(x,y,obj_vanilla_test_obj.x+irandom_range(-5,5),obj_vanilla_test_obj.y);
 bullet.dir = dir;
 alarm[0] = irandom_range(60,90);
 </string>
@@ -122,23 +123,47 @@ alarm[0] = irandom_range(60,90);
         if (y &gt; obj_vanilla_test_obj.y - 100) {
             if (state == "nothing") {
                 //Calculate a state or  just u know randomly select one?
-                state = choose("retreat","aggro");
+                state = choose("retreat");
             }
             switch(state) {
             //Too Close To Player, Retreat (Check For Player Hp Next Time Also)
             case "retreat":
                 if(amttomove &lt;= 0) {
-                    irandom_range(15,30);
+                    amttomove = irandom_range(15,30);
+                    xrandom = irandom_range(-3,3);
                 }
-                y += 3;
+                if (amttomove &gt; 0 ) {
+                    if (!place_meeting(x+xrandom,y+3,obj_solid)) {
+                        if ((y+3) &lt; 800 &amp;&amp; (x+xrandom) &lt; 500 &amp;&amp; (x+xrandom) &gt; 0)
+                        y += 3;
+                        x += xrandom;
+                    }else {
+                        amttomove = 0;
+                    }
+                }
                 amttomove -= 3;
                 if (amttomove &lt;= 0) {
-                   state = choose("retreat","aggro");
+                   state = choose("retreat");
                 }
             break; 
             //Too Far To Player, Aggro
             case "aggro":
-                y -= 2;
+                if(amttomove &lt;= 0) {
+                    amttomove = irandom_range(15,30);
+                    xrandom = irandom_range(-3,3);
+                }
+                if (amttomove &gt; 0 ) {
+                    if (!place_meeting(x+xrandom,y+3,obj_solid &amp;&amp; (y-3) &gt;0 &amp;&amp; ((x+ xrandom)*3) &lt; 500 &amp;&amp; ((x+xrandom)*3) &gt; 0)) {
+                        y -= 3;
+                        x += xrandom*3;
+                    }else {
+                        amttomove = 0;
+                    }
+                }
+                amttomove -= 3;
+                if (amttomove &lt;= 0) {
+                   state = choose("retreat","aggro");
+                }
             break;
             //Dance Like Michael Jackson/Just Dont Get Fking Hit
             case "dodge":
