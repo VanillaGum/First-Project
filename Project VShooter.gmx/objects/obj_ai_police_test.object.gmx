@@ -134,16 +134,19 @@ alarm[0] = irandom_range(60,90);
                 }
                 if (amttomove &gt; 0 ) {
                     if (!place_meeting(x+xrandom,y+3,obj_solid)) {
-                        if ((y+3) &lt; 800 &amp;&amp; (x+xrandom) &lt; 500 &amp;&amp; (x+xrandom) &gt; 0)
-                        y += 3;
-                        x += xrandom;
+                        if ((y+3) &lt; 800 ) {
+                            y += 3;
+                        }
+                        if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
+                            x += xrandom;
+                        }
                     }else {
                         amttomove = 0;
                     }
                 }
                 amttomove -= 3;
                 if (amttomove &lt;= 0) {
-                   state = choose("retreat");
+                   state = choose("retreat","aggro");
                 }
             break; 
             //Too Far To Player, Aggro
@@ -153,9 +156,13 @@ alarm[0] = irandom_range(60,90);
                     xrandom = irandom_range(-3,3);
                 }
                 if (amttomove &gt; 0 ) {
-                    if (!place_meeting(x+xrandom,y+3,obj_solid &amp;&amp; (y-3) &gt;0 &amp;&amp; ((x+ xrandom)*3) &lt; 500 &amp;&amp; ((x+xrandom)*3) &gt; 0)) {
-                        y -= 3;
-                        x += xrandom*3;
+                    if (!place_meeting(x+xrandom,y-3,obj_solid)) {
+                        if ((y-3)  &gt; 0 ) {
+                            y -= 3;
+                        }
+                        if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
+                            x += xrandom;
+                        }
                     }else {
                         amttomove = 0;
                     }
