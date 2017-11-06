@@ -118,68 +118,69 @@ alarm[0] = irandom_range(60,90);
                 speed = 0;
             }
         }
-    }else{
-        //Do Normal None Shield Ai Here
-        if (y &gt; obj_vanilla_test_obj.y - 100) {
-            if (state == "nothing") {
-                //Calculate a state or  just u know randomly select one?
-                state = choose("retreat");
+    }
+}else{
+    //Do Normal None Shield Ai Here
+    if (y &gt; obj_vanilla_test_obj.y - 100) {
+        if (state == "nothing") {
+            //Calculate a state or  just u know randomly select one?
+            state = choose("retreat");
+        }
+        switch(state) {
+        //Too Close To Player, Retreat (Check For Player Hp Next Time Also)
+        case "retreat":
+            if(amttomove &lt;= 0) {
+                amttomove = irandom_range(15,30);
+                xrandom = irandom_range(-3,3);
             }
-            switch(state) {
-            //Too Close To Player, Retreat (Check For Player Hp Next Time Also)
-            case "retreat":
-                if(amttomove &lt;= 0) {
-                    amttomove = irandom_range(15,30);
-                    xrandom = irandom_range(-3,3);
-                }
-                if (amttomove &gt; 0 ) {
-                    if (!place_meeting(x+xrandom,y+3,obj_solid)) {
-                        if ((y+3) &lt; 800 ) {
-                            y += 3;
-                        }
-                        if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
-                            x += xrandom;
-                        }
-                    }else {
-                        amttomove = 0;
+            if (amttomove &gt; 0 ) {
+                if (!place_meeting(x+xrandom,y+3,obj_solid)) {
+                    if ((y+3) &lt; 800 ) {
+                        y += 3;
                     }
-                }
-                amttomove -= 3;
-                if (amttomove &lt;= 0) {
-                   state = choose("retreat","aggro");
-                }
-            break; 
-            //Too Far To Player, Aggro
-            case "aggro":
-                if(amttomove &lt;= 0) {
-                    amttomove = irandom_range(15,30);
-                    xrandom = irandom_range(-3,3);
-                }
-                if (amttomove &gt; 0 ) {
-                    if (!place_meeting(x+xrandom,y-3,obj_solid)) {
-                        if ((y-3)  &gt; 0 ) {
-                            y -= 3;
-                        }
-                        if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
-                            x += xrandom;
-                        }
-                    }else {
-                        amttomove = 0;
+                    if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
+                        x += xrandom;
                     }
+                }else {
+                    amttomove = 0;
                 }
-                amttomove -= 3;
-                if (amttomove &lt;= 0) {
-                   state = choose("retreat","aggro");
-                }
-            break;
-            //Dance Like Michael Jackson/Just Dont Get Fking Hit
-            case "dodge":
-                
-            break;
             }
+            amttomove -= 3;
+            if (amttomove &lt;= 0) {
+               state = choose("retreat","aggro");
+            }
+        break; 
+        //Too Far To Player, Aggro
+        case "aggro":
+            if(amttomove &lt;= 0) {
+                amttomove = irandom_range(30,45);
+                xrandom = irandom_range(-2,2);
+            }
+            if (amttomove &gt; 0 ) {
+                if (!place_meeting(x+xrandom,y-3,obj_solid)) {
+                    if ((y-3)  &gt; 0 ) {
+                        y -= 3;
+                    }
+                    if ((x+xrandom) &gt;0 &amp;&amp; (x+xrandom) &lt; 500) {
+                        x += xrandom;
+                    }
+                }else {
+                    amttomove = 0;
+                }
+            }
+            amttomove -= 3;
+            if (amttomove &lt;= 0) {
+               state = choose("retreat","aggro");
+            }
+        break;
+        //Dance Like Michael Jackson/Just Dont Get Fking Hit
+        case "dodge":
+            
+        break;
         }
     }
 }
+
 </string>
           </argument>
         </arguments>

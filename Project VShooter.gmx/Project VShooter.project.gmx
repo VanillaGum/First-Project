@@ -31,11 +31,13 @@
     <object>objects\obj_bullet_tracking</object>
     <object>objects\gotoroom</object>
     <object>objects\obj_vanilla_test_obj</object>
+    <object>objects\obj_gun</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_vanilla_indicator</object>
     <object>objects\obj_control_generator</object>
     <object>objects\obj_ai_shield_test</object>
     <object>objects\obj_ai_shield_test_2</object>
+    <object>objects\obj_ai_police_path</object>
     <object>objects\obj_ai_police_test</object>
     <objects name="Player">
       <object>objects\obj_player</object>
