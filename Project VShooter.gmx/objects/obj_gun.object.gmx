@@ -72,14 +72,16 @@
           <argument>
             <kind>1</kind>
             <string>dir = point_direction(x,y,mouse_x,mouse_y);
+var diradd = irandom_range(-2,2);
 if (canfire == true) {
     //bullet = instance_create(x,y,obj_bullet);
     //bullet.dir = dir;
     //bullet2 = instance_create(x,y,obj_bullet_tracking);
     bullet = instance_create(x,y,obj_bullet);
-    bullet.dir = dir;
+    bullet.dir = dir+diradd;
+    bullet.diradd = sign(diradd);
     canfire = false;
-    alarm[0] = 30;
+    alarm[0] = 5;
 }
 </string>
           </argument>

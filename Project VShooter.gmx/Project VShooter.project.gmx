@@ -15,6 +15,8 @@
     <sprite>sprites\spr_obstacle</sprite>
     <sprite>sprites\spr_gun</sprite>
     <sprite>sprites\PLAYERTEST</sprite>
+    <sprite>sprites\spr_player_base</sprite>
+    <sprite>sprites\spr_top_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
