@@ -17,6 +17,7 @@
     <sprite>sprites\PLAYERTEST</sprite>
     <sprite>sprites\spr_player_base</sprite>
     <sprite>sprites\spr_top_1</sprite>
+    <sprite>sprites\spr_mine</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -48,6 +49,8 @@
     <object>objects\obj_enemy_bullet</object>
     <object>objects\obj_control</object>
     <object>objects\obj_solid</object>
+    <object>objects\obj_mine</object>
+    <object>objects\obj_mine_menu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
