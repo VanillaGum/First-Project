@@ -31,7 +31,136 @@ sprname = ds_queue_create();
 ds_queue_enqueue(sprimage,
 spr_player,
 spr_bullet);
+ds_queue_enqueue(sprname,
+"Player Sprite",
+"Bullet Sprite");
 
+
+
+//container
+container_x = 200 //X position of container
+container_y = 20 //Y position of container
+container_w = 300 //Width of container
+container_h = 370 //Height of container
+
+//scrollbar
+scroll_x = 250 //x position of scrollbar
+scroll_y = 20 //y position of scroll bar
+scroll_y_top = scroll_y //Top y value scroll bar can go, default is starting position
+scroll_y_limit = 250//distance before scrollbar cant move down anymore
+scroll_gy = 0//used for grabbing
+scroll_g = 0 //Toggle if grabbed
+
+//items grid
+items_x = 20 //X position of items grid
+items_y = 14 //Y position of items grid
+items_r = 1 //How many items per row
+items_c = 5 //How many items per column
+
+total_items = 0 + ds_queue_size(sprimage);
+total_items--;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//if mouse is within scolling box
+if ( mouse_x&gt;container_x+scroll_x 
+    &amp;&amp; mouse_x&lt;container_x+scroll_x+sprite_get_width(spr_scrollbar)
+    &amp;&amp; mouse_y&gt;container_y+scroll_y 
+    &amp;&amp; mouse_y&lt;container_y+scroll_y+sprite_get_height(spr_scrollbar) )
+{
+
+    if mouse_check_button(mb_left){
+    
+        if scroll_g=0{ //if you're not already grabbing it
+            scroll_g=1 //you are now
+            scroll_gy=(mouse_y)-(container_y+scroll_y) //get the y difference (this so it drags from where you grabbed it, and not at its corner)
+        }
+    
+    }
+
+}
+
+//Move the scrollbar relatively to the mouse
+if (scroll_g=1) {scroll_y = mouse_y - (container_y) - scroll_gy} 
+
+//Limit the movement of the scrollbar
+if (scroll_y&gt;scroll_y_limit) {scroll_y=scroll_y_limit}  //Don't go below height limit
+if (scroll_y&lt;scroll_y_top) {scroll_y=scroll_y_top} //Don't go above starting point
+if (mouse_check_button(mb_left) = 0) //Determine if we are no longer grabbing
+{
+    if scroll_g=1{scroll_g=0}
+} 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//container
+draw_set_color(c_yellow);
+draw_rectangle(container_x,container_y,container_x+container_w,view_yview+container_y+container_h,0)
+
+//scrollbar
+draw_sprite(spr_scrollbar,0,container_x + scroll_x,container_y + scroll_y)
+
+//Items
+var i,j,n,s;
+i=0;
+j=0;
+s=1+(items_r*ceil((((scroll_y-20)/scroll_y_limit)*total_items)/items_r))//240 is the height of the scrolling area
+
+if (s &gt; total_items-(items_r*items_c)+1){s=total_items-(items_r*items_c)+1}
+if (s &lt; 1){s = 1}
+n=s
+
+for(runi=0 ;runi &lt; total_items;runi++){
+
+    if (n &lt;= total_items){
+
+        draw_sprite(ds_queue_dequeue(sprimage),0,container_x+items_x+(60*i),container_y+items_y+(60*j))
+        i+=1 
+        if (i &gt; items_r-1) {i=0 j+=1} 
+        n+=1
+    
+    }
+
+}
 </string>
           </argument>
         </arguments>

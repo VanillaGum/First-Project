@@ -18,6 +18,7 @@
     <sprite>sprites\spr_player_base</sprite>
     <sprite>sprites\spr_top_1</sprite>
     <sprite>sprites\spr_mine</sprite>
+    <sprite>sprites\spr_scrollbar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -57,6 +58,7 @@
     <room>rooms\InfinityRoom</room>
     <room>rooms\VanillaRoom</room>
     <room>rooms\VanillaAiRoom</room>
+    <room>rooms\shop_menu_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
