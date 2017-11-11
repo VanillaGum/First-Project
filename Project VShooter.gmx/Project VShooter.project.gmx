@@ -53,6 +53,7 @@
     <object>objects\obj_mine</object>
     <object>objects\obj_mine_menu</object>
     <object>objects\object22</object>
+    <object>objects\shop_menu_tricks</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

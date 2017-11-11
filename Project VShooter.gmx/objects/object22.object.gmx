@@ -134,6 +134,7 @@ if (mouse_check_button(mb_left) = 0) //Determine if we are no longer grabbing
             <kind>1</kind>
             <string>//container
 draw_set_color(c_yellow);
+//Just Draws A Rectangle
 draw_rectangle(container_x,container_y,container_x+container_w,view_yview+container_y+container_h,0)
 
 //scrollbar
@@ -143,8 +144,10 @@ draw_sprite(spr_scrollbar,0,container_x + scroll_x,container_y + scroll_y)
 var i,j,n,s;
 i=0;
 j=0;
-s=1+(items_r*ceil((((scroll_y-20)/scroll_y_limit)*total_items)/items_r))//240 is the height of the scrolling area
-
+s=1+(items_r*ceil(((
+(scroll_y-20)/scroll_y_limit)*total_items)/items_r))//240 is the height of the scrolling area
+//scroll_y-20/scroll_y_limit gets the percentage it is scrolling down at
+//
 if (s &gt; total_items-(items_r*items_c)+1){s=total_items-(items_r*items_c)+1}
 if (s &lt; 1){s = 1}
 n=s
