@@ -59,29 +59,6 @@ items_c = 5 //How many items per column
 
 total_items = 0 + ds_queue_size(sprimage);
 total_items--;
-
-//Items
-var i,j,n,s;
-i=0;
-j=0;
-s=1+(items_r*ceil((((scroll_y-20)/scroll_y_limit)*total_items)/items_r))//240 is the height of the scrolling area
-
-if (s &gt; total_items-(items_r*items_c)+1){s=total_items-(items_r*items_c)+1}
-if (s &lt; 1){s = 1}
-n=s
-if (ds_queue_empty(sprimage) == false) {
-    for(runi=0 ;runi &lt; total_items;runi++){
-    
-        if (n &lt;= total_items){
-    
-            draw_sprite(ds_queue_dequeue(sprimage),0,container_x+items_x+(60*i),container_y+items_y+(60*j))
-            i+=1 
-            if (i &gt; items_r-1) {i=0 j+=1} 
-            n+=1
-        
-        }
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -162,6 +139,28 @@ draw_rectangle(container_x,container_y,container_x+container_w,view_yview+contai
 //scrollbar
 draw_sprite(spr_scrollbar,0,container_x + scroll_x,container_y + scroll_y)
 
+//Items
+var i,j,n,s;
+i=0;
+j=0;
+s=1+(items_r*ceil((((scroll_y-20)/scroll_y_limit)*total_items)/items_r))//240 is the height of the scrolling area
+
+if (s &gt; total_items-(items_r*items_c)+1){s=total_items-(items_r*items_c)+1}
+if (s &lt; 1){s = 1}
+n=s
+if (ds_queue_empty(sprimage) == false) {
+    for(runi=0 ;runi &lt; total_items;runi++){
+    
+        if (n &lt;= total_items){
+    
+            draw_sprite(ds_queue_dequeue(sprimage),0,container_x+items_x+(60*i),container_y+items_y+(60*j))
+            i+=1 
+            if (i &gt; items_r-1) {i=0 j+=1} 
+            n+=1
+        
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
