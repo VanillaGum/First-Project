@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>canfire = true;
+dmgmodifier = 1.5;
 </string>
           </argument>
         </arguments>
@@ -65,7 +66,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_gun</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -82,6 +83,7 @@ if (canfire == true) {
     bullet.diradd = sign(diradd);
     canfire = false;
     alarm[0] = 5;
+    bullet.dmg = dmgmodifier * obj_player_stats.dmg;
 }
 </string>
           </argument>

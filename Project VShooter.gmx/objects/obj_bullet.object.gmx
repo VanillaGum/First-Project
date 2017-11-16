@@ -28,6 +28,7 @@
             <string>spd = 10;
 dir = 0;
 diradd = 0;
+dmg = 0;
 alarm[0] = irandom_range(30,50);
 </string>
           </argument>

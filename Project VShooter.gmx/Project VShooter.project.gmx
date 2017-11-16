@@ -54,6 +54,7 @@
     <object>objects\obj_mine_menu</object>
     <object>objects\object22</object>
     <object>objects\shop_menu_tricks</object>
+    <object>objects\obj_player_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
