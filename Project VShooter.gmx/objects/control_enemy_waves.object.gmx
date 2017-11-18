@@ -2,9 +2,9 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,8 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dmg = 15;
-hp = 15;
+            <string>wave = 0;
+xspawn = 32;
+yspawn = 768;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!instance_exists(obj_ai_police_test)) {
+    for(i=0;i &lt;(wave*3);i++) {
+        if(xspawn==416) {
+            xspawn=32;
+            yspawn-=32;
+        }
+        instance_create(xspawn,yspawn,obj_ai_police_test);
+        xspawn+=32;
+    }   
+    wave++;
+    xspawn = 32;
+    yspawn = 768;
+}
 </string>
           </argument>
         </arguments>

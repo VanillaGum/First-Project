@@ -55,6 +55,7 @@
     <object>objects\object22</object>
     <object>objects\shop_menu_tricks</object>
     <object>objects\obj_player_stats</object>
+    <object>objects\control_enemy_waves</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
